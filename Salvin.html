@@ -1,0 +1,2536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Salvin Consultants</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0a1628',
+            navy2: '#0f2044',
+            blue: '#1a3a8f',
+            blue2: '#2255cc',
+            accent: '#0ea5e9',
+            accent2: '#38bdf8',
+            cyan: '#06b6d4',
+            light: '#f8fafc',
+            gray2: '#64748b',
+          },
+          fontFamily: {
+            sans: ['Segoe UI', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    :root {
+      --navy: #0a1628;
+      --navy2: #0f2044;
+      --blue: #1a3a8f;
+      --blue2: #2255cc;
+      --accent: #0ea5e9;
+      --accent2: #38bdf8;
+      --cyan: #06b6d4;
+      --light: #f8fafc;
+      --gray: #e2e8f0;
+      --gray2: #64748b;
+      --text: #1e293b;
+      --white: #fff;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      color: var(--text);
+      background: #fff
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e2e8f0;
+      padding: 0 5%
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #fff;
+      font-size: 15px
+    }
+
+    .logo-text {
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.3px
+    }
+
+    .logo-text span {
+      color: var(--accent)
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none
+    }
+
+    .nav-links a {
+      color: var(--gray2);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color .2s
+    }
+
+    .nav-links a:hover {
+      color: var(--accent)
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #fff;
+      padding: 9px 22px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .2s
+    }
+
+    .nav-cta:hover {
+      background: #0284c7
+    }
+
+    /* HAMBURGER MENU */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      background: none;
+      border: none;
+      padding: 0;
+      z-index: 1000
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      display: block
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px)
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px)
+    }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid var(--gray);
+      flex-direction: column;
+      gap: 0;
+      z-index: 998;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+    }
+
+    .mobile-menu.active {
+      display: flex
+    }
+
+    .mobile-menu a,
+    .mobile-menu button {
+      padding: 14px 20px;
+      text-decoration: none;
+      color: var(--gray2);
+      font-size: 15px;
+      font-weight: 500;
+      border: none;
+      background: none;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s
+    }
+
+    .mobile-menu a:hover,
+    .mobile-menu button:hover {
+      color: var(--accent);
+      background: var(--light)
+    }
+
+    .mobile-menu .nav-cta-mobile {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      margin: 10px 15px;
+      border-radius: 6px
+    }
+
+    .mobile-menu .nav-cta-mobile:hover {
+      background: #0284c7;
+      color: #fff
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 4%
+      }
+
+      .nav-inner {
+        height: 60px
+      }
+
+      .logo-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 13px
+      }
+
+      .logo-text {
+        font-size: 16px
+      }
+
+      .nav-links {
+        display: none
+      }
+
+      .nav-cta {
+        display: none
+      }
+
+      .hamburger {
+        display: flex
+      }
+
+      .hero {
+        padding: 60px 20px 40px
+      }
+
+      .hero-inner {
+        flex-direction: column
+      }
+
+      .hero h1 {
+        font-size: clamp(24px, 4vw, 40px)
+      }
+
+      .hero-badge {
+        font-size: 11px
+      }
+
+      .hero-sub {
+        font-size: 14px
+      }
+
+      .hero-btns {
+        gap: 10px
+      }
+
+      .btn-primary,
+      .btn-outline {
+        padding: 11px 18px;
+        font-size: 13px;
+        flex: 1;;
+        min-width: 140px
+      }
+
+      .hero-stats {
+        gap: 20px;
+        padding-top: 24px;
+        flex-wrap: wrap
+      }
+
+      .stat-num {
+        font-size: 22px
+      }
+
+      .stat-label {
+        font-size: 10px
+      }
+
+      .slider-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 20px
+      }
+
+      .slider-nav.prev {
+        left: 15px
+      }
+
+      .slider-nav.next {
+        right: 15px
+      }
+
+      .slider-dots {
+        bottom: 20px
+      }
+
+      section {
+        padding: 60px 4%
+      }
+
+      .section-title {
+        font-size: clamp(22px, 3vw, 32px)
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+
+      .about-imgs {
+        height: 300px
+      }
+
+      .about-img-main {
+        width: 75%;
+        height: 250px
+      }
+
+      .about-img-small {
+        width: 60%;
+        height: 160px
+      }
+
+      .mv-cards {
+        grid-template-columns: 1fr
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px
+      }
+
+      .service-card {
+        padding: 18px
+      }
+
+      .service-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 20px
+      }
+
+      .service-card h3 {
+        font-size: 14px
+      }
+
+      .service-card p {
+        font-size: 12px
+      }
+
+      .ind-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px
+      }
+
+      .industry-card {
+        padding: 16px
+      }
+
+      .industry-card h3 {
+        font-size: 14px
+      }
+
+      .industry-card p {
+        font-size: 12px
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px
+      }
+
+      .step {
+        padding: 16px
+      }
+
+      .step h4 {
+        font-size: 12px
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr;
+        gap: 16px
+      }
+
+      .testi-card {
+        padding: 20px
+      }
+
+      .cases-grid {
+        grid-template-columns: 1fr;
+        gap: 16px
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+
+      .contact-form {
+        padding: 20px
+      }
+
+      .form-input,
+      .form-textarea,
+      .form-submit {
+        font-size: 14px
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr
+      }
+
+      .footer-brand,
+      .footer-col {
+        text-align: center
+      }
+
+      .footer-socials {
+        justify-content: center
+      }
+
+      .footer-bottom {
+        justify-content: center;
+        text-align: center
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+
+      .why-cards {
+        grid-template-columns: 1fr
+      }
+
+      .why-img {
+        height: 300px
+      }
+
+      .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px
+      }
+
+      .services-header .btn-primary {
+        width: 100%;
+        justify-content: center
+      }
+
+      .form-row {
+        grid-template-columns: 1fr
+      }
+
+      .trusted-inner {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start
+      }
+
+      .process-steps::before {
+        display: none
+      }
+
+      .step-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 20px
+      }
+
+      .hero {
+        min-height: 100vh;
+        height: auto
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        padding: 0 3%
+      }
+
+      .nav-inner {
+        height: 56px
+      }
+
+      .logo-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 11px
+      }
+
+      .logo-text {
+        font-size: 14px
+      }
+
+      .hamburger span {
+        width: 20px;
+        height: 2.5px
+      }
+
+      .hero {
+        padding: 56px 15px 30px
+      }
+
+      .hero h1 {
+        font-size: clamp(20px, 3.5vw, 28px)
+      }
+
+      .hero-badge {
+        font-size: 10px;
+        padding: 5px 12px
+      }
+
+      .hero-sub {
+        font-size: 13px;
+        line-height: 1.6
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        gap: 8px
+      }
+
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 13px
+      }
+
+      .hero-stats {
+        gap: 16px;
+        flex-direction: column
+      }
+
+      .stat-num {
+        font-size: 20px
+      }
+
+      .slider-nav {
+        width: 34px;
+        height: 34px;
+        font-size: 18px
+      }
+
+      .slider-nav.prev {
+        left: 8px
+      }
+
+      .slider-nav.next {
+        right: 8px
+      }
+
+      .slider-dot {
+        width: 8px;
+        height: 8px
+      }
+
+      .slider-dot.active {
+        width: 24px
+      }
+
+      section {
+        padding: 50px 3%
+      }
+
+      .section-title {
+        font-size: 24px
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr
+      }
+
+      .service-card {
+        padding: 14px
+      }
+
+      .ind-grid {
+        grid-template-columns: 1fr
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr
+      }
+
+      .about-img-main {
+        width: 80%
+      }
+
+      .about-img-small {
+        width: 65%
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .ind-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .testi-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .cases-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .about-grid {
+        gap: 40px
+      }
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 5% 60px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero-bg-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .hero-bg-slider .slider-nav {
+      pointer-events: auto;
+    }
+
+    .hero-bg-slider .slider-dot {
+      pointer-events: auto;
+    }
+
+    .hero-bg-slider .slider-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .hero-bg-slider .slider-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 22, 40, 0.5);
+      z-index: 1;
+    }
+
+    .hero-bg-shape {
+      display: none;
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(14, 165, 233, 0.2);
+      border: 1px solid rgba(14, 165, 233, 0.5);
+      color: var(--accent2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      margin-bottom: 22px
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 56px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px
+    }
+
+    .hero h1 span {
+      color: var(--accent2)
+    }
+
+    .hero-sub {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 16.5px;
+      line-height: 1.75;
+      margin-bottom: 34px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+      justify-content: center
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all .2s;
+      box-shadow: 0 4px 16px rgba(14, 165, 233, 0.3)
+    }
+
+    .btn-primary:hover {
+      background: #0284c7;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(14, 165, 233, 0.35)
+    }
+
+    .btn-outline {
+      border: 2px solid #fff;
+      color: #fff;
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all .2s
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--accent2)
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 36px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      justify-content: center;
+      flex-wrap: wrap
+    }
+
+    .stat-num {
+      font-size: 26px;
+      font-weight: 900;
+      color: #fff
+    }
+
+    .stat-num span {
+      color: var(--accent2)
+    }
+
+    .stat-label {
+      font-size: 11.5px;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 500;
+      margin-top: 2px
+    }
+
+    /* HERO IMAGE SIDE */
+    .hero-img-wrap {
+      display: none;
+    }
+
+    .hero-main-img {
+      width: 100%;
+      max-width: 520px;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 24px 60px rgba(10, 22, 40, 0.15)
+    }
+
+    .hero-img-card {
+      position: absolute;
+      background: #fff;
+      border-radius: 14px;
+      padding: 14px 18px;
+      box-shadow: 0 8px 32px rgba(10, 22, 40, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .hero-img-card.card1 {
+      bottom: 30px;
+      left: -20px
+    }
+
+    .hero-img-card.card2 {
+      top: 30px;
+      right: -20px
+    }
+
+    .hic-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0
+    }
+
+    .hic-num {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--navy)
+    }
+
+    .hic-label {
+      font-size: 11px;
+      color: var(--gray2);
+      font-weight: 500
+    }
+
+    /* IMAGE SLIDER - FULL PAGE BACKGROUND */
+    .slider-container {
+      display: none;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slider-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      top: 0;
+      left: 0;
+    }
+
+    .slider-slide.active {
+      opacity: 1;
+    }
+
+    .slider-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 12;
+    }
+
+    .slider-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .slider-dot.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      width: 30px;
+      border-radius: 5px;
+    }
+
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 12;
+      transition: all 0.2s ease;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .slider-nav:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: var(--accent);
+    }
+
+    .slider-nav.prev {
+      left: 30px;
+    }
+
+    .slider-nav.next {
+      right: 30px;
+    }
+
+    /* TRUSTED BY */
+    .trusted {
+      padding: 28px 5%;
+      background: #f8fafc;
+      border-top: 1px solid var(--gray);
+      border-bottom: 1px solid var(--gray)
+    }
+
+    .trusted-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap
+    }
+
+    .trusted-label {
+      font-size: 13px;
+      color: var(--gray2);
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0
+    }
+
+    .trusted-logos {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gray2);
+      font-size: 13px;
+      font-weight: 600;
+      opacity: .7
+    }
+
+    .trust-badge i {
+      font-size: 20px;
+      color: var(--blue2)
+    }
+
+    /* SECTION COMMON */
+    section {
+      padding: 90px 5%
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: #f0f9ff;
+      color: var(--accent);
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      text-transform: uppercase
+    }
+
+    .section-tag.blue {
+      background: #eff6ff;
+      color: var(--blue2)
+    }
+
+    .section-title {
+      font-size: clamp(26px, 3vw, 40px);
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -0.8px;
+      margin-bottom: 14px;
+      line-height: 1.15
+    }
+
+    .section-sub {
+      color: var(--gray2);
+      font-size: 16px;
+      line-height: 1.7
+    }
+
+    /* ABOUT */
+    .about {
+      background: #fff
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-imgs {
+      position: relative;
+      height: 460px
+    }
+
+    .about-img-main {
+      width: 72%;
+      height: 340px;
+      object-fit: cover;
+      border:#428ed6 solid 4px;
+      border-radius: 18px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-shadow: 0 20px 50px rgba(10, 22, 40, 0.13)
+    }
+
+    .about-img-small {
+      width: 54%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 14px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      box-shadow: 0 12px 32px rgba(10, 22, 40, 0.12);
+      border: 4px solid #fff
+    }
+
+    .about-exp-badge {
+      position: absolute;
+      top: 50%;
+      left: 60%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: 0 8px 28px rgba(10, 22, 40, 0.14);
+      text-align: center;
+      z-index: 2
+    }
+
+    .aeb-num {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1
+    }
+
+    .aeb-label {
+      font-size: 11px;
+      color: var(--gray2);
+      font-weight: 600;
+      margin-top: 4px
+    }
+
+    .mv-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 28px
+    }
+
+    .mv-card {
+      background: var(--light);
+      border: 1px solid var(--gray);
+      border-radius: 14px;
+      padding: 20px;
+      transition: all .2s
+    }
+
+    .mv-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(14, 165, 233, 0.08)
+    }
+
+    .mv-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 12px
+    }
+
+    .mv-card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px
+    }
+
+    .mv-card p {
+      font-size: 13px;
+      color: var(--gray2);
+      line-height: 1.6
+    }
+
+    /* SERVICES */
+    .services {
+      background: var(--light)
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      gap: 20px
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px
+    }
+
+    .svc-card {
+      background: #ffffff;
+      border: #cbcbcb 1px solid ;
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all .25s;
+      cursor: pointer
+    }
+
+    .svc-card-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 18px
+    }
+
+    .svc-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s
+    }
+
+    .svc-card:hover::before {
+      transform: scaleX(1)
+    }
+
+    .svc-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(10, 22, 40, 0.1)
+    }
+
+    .svc-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 14px
+    }
+
+    .svc-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px
+    }
+
+    .svc-card p {
+      font-size: 13px;
+      color: var(--gray2);
+      line-height: 1.65
+    }
+
+    .svc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 14px;
+      text-decoration: none;
+      transition: gap .2s
+    }
+
+    .svc-link:hover {
+      gap: 10px
+    }
+
+    /* INDUSTRIES */
+    .industries {
+      background: #fff
+    }
+
+    .ind-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 50px
+    }
+
+    .ind-card {
+      border: 1px solid var(--gray);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all .25s;
+      cursor: pointer
+    }
+
+    .ind-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(10, 22, 40, 0.1);
+      border-color: var(--blue2)
+    }
+
+    .ind-img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover
+    }
+
+    .ind-body {
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .ind-body i {
+      font-size: 22px;
+      color: var(--blue2)
+    }
+
+    .ind-card:nth-child(2n) .ind-body i {
+      color: var(--accent)
+    }
+
+    .ind-body span {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy)
+    }
+
+    /* WHY CHOOSE */
+    .why {
+      background: var(--light)
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center
+    }
+
+    .why-img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(10, 22, 40, 0.12)
+    }
+
+    .why-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    .why-card {
+      background: #fff;
+      border: 1px solid var(--gray);
+      border-radius: 14px;
+      padding: 22px;
+      transition: all .2s
+    }
+
+    .why-card:hover {
+      border-color: var(--blue2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26, 58, 143, 0.08)
+    }
+
+    .why-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 12px
+    }
+
+    .why-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px
+    }
+
+    .why-card p {
+      font-size: 12.5px;
+      color: var(--gray2);
+      line-height: 1.6
+    }
+
+    /* PROCESS */
+    .process {
+      background: #fff
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin-top: 60px;
+      position: relative
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 38px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue2), var(--cyan));
+      z-index: 0
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding: 0 8px
+    }
+
+    .step-circle {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin: 0 auto 20px;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 16px rgba(10, 22, 40, 0.1);
+      position: relative
+    }
+
+    .step-circle::after {
+      content: attr(data-step);
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .step h4 {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px
+    }
+
+    .step p {
+      font-size: 12px;
+      color: var(--gray2);
+      line-height: 1.6
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      background: var(--navy);
+      padding: 90px 5%
+    }
+
+    .testimonials .section-tag {
+      background: rgba(14, 165, 233, 0.15);
+      color: var(--accent)
+    }
+
+    .testimonials .section-title {
+      color: #fff
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 50px
+    }
+
+    .testi-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 28px;
+      transition: all .25s
+    }
+
+    .testi-card:hover {
+      background: rgba(255, 255, 255, 0.09);
+      transform: translateY(-3px)
+    }
+
+    .stars {
+      color: var(--accent2);
+      font-size: 14px;
+      margin-bottom: 14px;
+      letter-spacing: 2px
+    }
+
+    .testi-text {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.75;
+      margin-bottom: 20px;
+      font-style: italic
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .testi-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+      flex-shrink: 0
+    }
+
+    .testi-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff
+    }
+
+    .testi-role {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.45)
+    }
+
+    /* CASE STUDIES */
+    .cases {
+      background: var(--light)
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 50px
+    }
+
+    .case-card {
+      background: #fff;
+      border: 1px solid var(--gray);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all .25s
+    }
+
+    .case-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(10, 22, 40, 0.1)
+    }
+
+    .case-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover
+    }
+
+    .case-body {
+      padding: 22px
+    }
+
+    .case-tag {
+      display: inline-block;
+      background: #eff6ff;
+      color: var(--blue2);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 10px
+    }
+
+    .case-body h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px
+    }
+
+    .case-body p {
+      font-size: 13px;
+      color: var(--gray2);
+      line-height: 1.6;
+      margin-bottom: 16px
+    }
+
+    .case-metrics {
+      display: flex;
+      gap: 20px;
+      padding-top: 14px;
+      border-top: 1px solid var(--gray)
+    }
+
+    .cm-val {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--navy)
+    }
+
+    .cm-val span {
+      color: var(--accent)
+    }
+
+    .cm-label {
+      font-size: 11px;
+      color: var(--gray2);
+      font-weight: 500
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #fff;
+      padding: 90px 5%
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .contact-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-top: 28px
+    }
+
+    .contact-info {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px
+    }
+
+    .ci-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--text);
+      font-size: 14px
+    }
+
+    .ci-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #f0f9ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--accent);
+      flex-shrink: 0
+    }
+
+    .form-card {
+      background: var(--light);
+      border: 1px solid var(--gray);
+      border-radius: 20px;
+      padding: 36px
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    .form-group {
+      margin-bottom: 16px
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 7px
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: #fff;
+      border: 1.5px solid var(--gray);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      transition: border-color .2s;
+      font-family: inherit
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent)
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s;
+      font-family: inherit;
+      box-shadow: 0 4px 16px rgba(14, 165, 233, 0.3)
+    }
+
+    .form-submit:hover {
+      background: #0284c7
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      padding: 60px 5% 28px
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 13.5px;
+      line-height: 1.7;
+      margin-top: 14px
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 8px;
+      margin-top: 18px
+    }
+
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 16px;
+      text-decoration: none;
+      transition: all .2s
+    }
+
+    .social-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 14px
+    }
+
+    .footer-col ul {
+      list-style: none
+    }
+
+    .footer-col li {
+      margin-bottom: 9px
+    }
+
+    .footer-col a {
+      color: rgba(255, 255, 255, 0.45);
+      text-decoration: none;
+      font-size: 13.5px;
+      transition: color .2s
+    }
+
+    .footer-col a:hover {
+      color: var(--accent)
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 36px auto 0;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+
+    .footer-bottom p {
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 12px
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <img src="./assets/salvin_logo.jpg" alt="Salvin Consultancy">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Get Free Consultation</a>
+      <button class="hamburger" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#industries">Industries</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="nav-cta-mobile">Get Free Consultation</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <!-- Background Slider -->
+    <div class="hero-bg-slider">
+      <div class="slider-slide active">
+        <img src="./assets/industrial factory floor.jpg" alt="Industrial factory floor" />
+      </div>
+      <div class="slider-slide">
+        <img src="./assets/slide1.jpg" alt="Factory consultation" />
+      </div>
+      <div class="slider-slide">
+        <img src="./assets/Food_machine.jpg" alt="Food processing machine" />
+      </div>
+      <div class="slider-slide">
+        <img src="./assets/slide2.jpg" alt="Industrial operations" />
+      </div>
+      <div class="slider-slide">
+        <img src="./assets/slide3.jpg" alt="Expert consultation" />
+      </div>
+      <div class="slider-dots">
+        <button class="slider-dot active" data-index="0"></button>
+        <button class="slider-dot" data-index="1"></button>
+        <button class="slider-dot" data-index="2"></button>
+        <button class="slider-dot" data-index="3"></button>
+        <button class="slider-dot" data-index="4"></button>
+      </div>
+      <button class="slider-nav prev" id="prevBtn">‹</button>
+      <button class="slider-nav next" id="nextBtn">›</button>
+    </div>
+
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Content -->
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><i class="ti ti-award"></i> India's Trusted Industrial Consultants</div>
+        <h1>Transforming Industrial Ideas into <span>Successful Businesses</span></h1>
+        <p class="hero-sub">End-to-end consultancy for entrepreneurs and enterprises — from factory setup to regulatory
+          compliance, we turn your vision into a thriving operation.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary"><i class="ti ti-calendar"></i> Get Consultation</a>
+          <a href="#services" class="btn-outline"><i class="ti ti-grid-dots"></i> Explore Services</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">500<span>+</span></div>
+            <div class="stat-label">Projects Delivered</div>
+          </div>
+          <div>
+            <div class="stat-num">15<span>+</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div>
+            <div class="stat-num">98<span>%</span></div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+          <div>
+            <div class="stat-num">12<span>+</span></div>
+            <div class="stat-label">Industries Served</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUSTED BY -->
+  <div class="trusted">
+    <div class="trusted-inner">
+      <span class="trusted-label">Trusted by businesses across</span>
+      <div class="trusted-logos">
+        <div class="trust-badge"><i class="ti ti-building-factory-2"></i> Manufacturing</div>
+        <div class="trust-badge"><i class="ti ti-salad"></i> Food Processing</div>
+        <div class="trust-badge"><i class="ti ti-flask"></i> Chemical</div>
+        <div class="trust-badge"><i class="ti ti-pill"></i> Pharma</div>
+        <div class="trust-badge"><i class="ti ti-package"></i> Packaging</div>
+        <div class="trust-badge"><i class="ti ti-tool"></i> Engineering</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-imgs">
+          <img class="about-img-main" src="./assets/WhoWE1.jpg" alt="Factory consultation" />
+          <img class="about-img-small" src="./assets/WhoWE2.jpg"
+            alt="Industrial planning" />
+          <div class="about-exp-badge">
+            <div class="aeb-num">15+</div>
+            <div class="aeb-label">Years of<br />Excellence</div>
+          </div>
+        </div>
+        <div>
+          <span class="section-tag">Who We Are</span>
+          <h2 class="section-title">Built on Trust.<br />Driven by Expertise.</h2>
+          <p class="section-sub">Salvin Consultants is a premier industrial and business consultancy firm, specializing
+            in helping entrepreneurs and companies start, license, and scale manufacturing and food processing ventures
+            across India.</p>
+          <p class="section-sub" style="margin-top:14px">With a team of seasoned industry professionals, we bring
+            practical, on-ground expertise to every engagement — ensuring your project is delivered on time, in budget,
+            and fully compliant.</p>
+          <div class="mv-cards">
+            <div class="mv-card">
+              <div class="mv-icon" style="background:#eff6ff;color:var(--blue2)"><i class="ti ti-target"></i></div>
+              <h4>Our Mission</h4>
+              <p>Simplify industrial setup and help businesses achieve operational excellence with zero compromise on
+                compliance.</p>
+            </div>
+            <div class="mv-card">
+              <div class="mv-icon" style="background:#f0f9ff;color:var(--accent)"><i class="ti ti-eye"></i></div>
+              <h4>Our Vision</h4>
+              <p>To be India's most trusted industrial consultancy — empowering every entrepreneur with knowledge and
+                support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <div class="services-header">
+        <div>
+          <span class="section-tag">What We Do</span>
+          <h2 class="section-title">Our Core Services</h2>
+          <p class="section-sub">Comprehensive consultancy at every stage of your industrial journey.</p>
+        </div>
+        <a href="#contact" class="btn-primary">View All Services <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="services-grid">
+        <div class="svc-card">
+          <img class="svc-card-img" src="./assets/Industry_Setup.jpg" alt="Industry Setup" />
+          <div class="svc-icon" style="background:#eff6ff;color:var(--blue2)"><i class="ti ti-building-factory-2"></i>
+          </div>
+          <h3>Industry Setup Consultancy</h3>
+          <p>Complete guidance from land selection and plant design to machinery procurement and workforce planning.</p>
+          <a href="#contact" class="svc-link">Learn more <i class="ti ti-arrow-right"></i></a>
+        </div>
+        <div class="svc-card">
+          <img class="svc-card-img" src="./assets/Food_business2.jpg" alt="Food Business" />
+          <div class="svc-icon" style="background:#f0f9ff;color:var(--accent)"><i class="ti ti-salad"></i></div>
+          <h3>Food Business Consultancy</h3>
+          <p>FSSAI compliance, product development, packaging standards, and food processing unit setup — all in one
+            place.</p>
+          <a href="#contact" class="svc-link">Learn more <i class="ti ti-arrow-right"></i></a>
+        </div>
+        <div class="svc-card">
+          <img class="svc-card-img"
+            src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&auto=format&fit=crop"
+            alt="Factory Licensing" />
+          <div class="svc-icon" style="background:#f0fdf4;color:#16a34a"><i class="ti ti-license"></i></div>
+          <h3>Factory Licensing</h3>
+          <p>End-to-end support for pollution NOC, fire NOC, factory act registration, MSME, GST, and all statutory
+            approvals.</p>
+          <a href="#contact" class="svc-link">Learn more <i class="ti ti-arrow-right"></i></a>
+        </div>
+        <div class="svc-card">
+          <img class="svc-card-img"
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&auto=format&fit=crop"
+            alt="Project Reports" />
+          <div class="svc-icon" style="background:#faf5ff;color:#7c3aed"><i class="ti ti-file-report"></i></div>
+          <h3>Project Reports & DPR</h3>
+          <p>Bankable Detailed Project Reports, feasibility studies, and viability reports for banks, investors, and
+            approvals.</p>
+          <a href="#contact" class="svc-link">Learn more <i class="ti ti-arrow-right"></i></a>
+        </div>
+        <div class="svc-card">
+          <img class="svc-card-img"
+            src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop"
+            alt="Compliance" />
+          <div class="svc-icon" style="background:#f0f9ff;color:var(--accent)"><i class="ti ti-shield-check"></i></div>
+          <h3>Compliance Assistance</h3>
+          <p>Ongoing pollution board renewals, labor law adherence, regulatory updates, and comprehensive audit support.
+          </p>
+          <a href="#contact" class="svc-link">Learn more <i class="ti ti-arrow-right"></i></a>
+        </div>
+        <div class="svc-card">
+          <img class="svc-card-img" src="./assets/ExpansionStrategy.jpg" alt="Expansion Strategy" />
+          <div class="svc-icon" style="background:#eff6ff;color:var(--blue2)"><i class="ti ti-trending-up"></i></div>
+          <h3>Expansion Strategy</h3>
+          <p>Strategic planning for capacity expansion, new product lines, geographic scaling, and modernization
+            roadmaps.</p>
+          <a href="#contact" class="svc-link">Learn more <i class="ti ti-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="industries" id="industries">
+    <div class="section-inner">
+      <div style="text-align:center">
+        <span class="section-tag blue">Sectors We Serve</span>
+        <h2 class="section-title">Industries We Specialize In</h2>
+        <p class="section-sub" style="margin:0 auto;max-width:540px">Deep domain expertise across India's most critical
+          and growing industrial sectors.</p>
+      </div>
+      <div class="ind-grid">
+        <div class="ind-card">
+          <img class="ind-img"
+            src="./assets/Spec_manufacturer.jpg"
+            alt="Manufacturing" />
+          <div class="ind-body"><i class="ti ti-building-factory-2"></i><span>Manufacturing</span></div>
+        </div>
+        <div class="ind-card">
+          <img class="ind-img" src="./assets/Spec_food.jpg" alt="Food and Beverage" />
+          <div class="ind-body"><i class="ti ti-salad"></i><span>Food & Beverage</span></div>
+        </div>
+        <div class="ind-card">
+          <img class="ind-img" src="./assets/Spec_pharma.jpg" alt="Pharma" />
+          <div class="ind-body"><i class="ti ti-pill"></i><span>Pharma</span></div>
+        </div>
+        <div class="ind-card">
+          <img class="ind-img" src="./assets/Spec_chem.jpg" alt="Chemical" />
+          <div class="ind-body"><i class="ti ti-flask"></i><span>Chemical</span></div>
+        </div>
+        <div class="ind-card">
+          <img class="ind-img" src="./assets/Spec_packing.jpg" alt="Packaging" />
+          <div class="ind-body"><i class="ti ti-package"></i><span>Packaging</span></div>
+        </div>
+        <div class="ind-card">
+          <img class="ind-img" src="./assets/Spec_eng.jpg" alt="Engineering" />
+          <div class="ind-body"><i class="ti ti-tool"></i><span>Engineering</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="why" id="why">
+    <div class="section-inner">
+      <div class="why-grid">
+        <div>
+          <img class="why-img"
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format&fit=crop"
+            alt="Team consulting" />
+        </div>
+        <div>
+          <span class="section-tag">Why Salvin</span>
+          <h2 class="section-title">Why Companies Choose Us</h2>
+          <p class="section-sub" style="margin-bottom:28px">Four pillars that make Salvin Consultants the preferred
+            partner for entrepreneurs and enterprises across India.</p>
+          <div class="why-cards">
+            <div class="why-card">
+              <div class="why-icon" style="background:#eff6ff;color:var(--blue2)"><i class="ti ti-brain"></i></div>
+              <h3>Deep Expertise</h3>
+              <p>15+ years across manufacturing, food, pharma, and chemical sectors.</p>
+            </div>
+            <div class="why-card">
+              <div class="why-icon" style="background:#f0f9ff;color:var(--accent)"><i class="ti ti-route"></i></div>
+              <h3>End-to-End Support</h3>
+              <p>With you from concept to commissioning and beyond.</p>
+            </div>
+            <div class="why-card">
+              <div class="why-icon" style="background:#f0fdf4;color:#16a34a"><i class="ti ti-history"></i></div>
+              <h3>Proven Track Record</h3>
+              <p>500+ projects, 98% satisfaction, and a trusted network.</p>
+            </div>
+            <div class="why-card">
+              <div class="why-icon" style="background:#faf5ff;color:#7c3aed"><i class="ti ti-adjustments"></i></div>
+              <h3>Customized Solutions</h3>
+              <p>Bespoke strategies tailored to your scale, sector, and goals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="section-inner">
+      <div style="text-align:center">
+        <span class="section-tag">How We Work</span>
+        <h2 class="section-title">Our 5-Step Proven Process</h2>
+        <p class="section-sub" style="margin:0 auto;max-width:540px">A structured, transparent methodology that delivers
+          results on time, on scope, and beyond expectations.</p>
+      </div>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-circle" style="background:#eff6ff;color:var(--blue2)" data-step="1"><i
+              class="ti ti-messages"></i></div>
+          <h4>Consultation</h4>
+          <p>Understanding your vision, goals, and industry challenges.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle" style="background:#f0fdf4;color:#16a34a" data-step="2"><i class="ti ti-sitemap"></i>
+          </div>
+          <h4>Planning</h4>
+          <p>Blueprint, timeline, compliance roadmap, and financial projections.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle" style="background:#faf5ff;color:#7c3aed" data-step="3"><i
+              class="ti ti-file-description"></i></div>
+          <h4>Documentation</h4>
+          <p>DPR, licenses, NOCs, and all statutory filings prepared.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle" style="background:#f0f9ff;color:var(--accent)" data-step="4"><i
+              class="ti ti-player-play"></i></div>
+          <h4>Execution</h4>
+          <p>On-ground coordination for setup, installation, and launch.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle" style="background:#ecfeff;color:var(--cyan)" data-step="5"><i
+              class="ti ti-headset"></i></div>
+          <h4>Ongoing Support</h4>
+          <p>Compliance, renewals, audits, and strategic growth guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-inner">
+      <div style="text-align:center">
+        <span class="section-tag">Client Voices</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"Salvin Consultants handled our entire food processing unit — from FSSAI licensing to
+            plant layout. Their expertise saved us months of delays and lakhs in compliance costs."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,var(--blue),var(--cyan))">RP</div>
+            <div>
+              <div class="testi-name">Rajesh Patel</div>
+              <div class="testi-role">Founder, Patel Food Industries, Anand</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"The DPR prepared by Salvin was instrumental in getting our bank loan approved in the
+            first attempt. Highly professional, detailed, and thorough from start to finish."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">MS</div>
+            <div>
+              <div class="testi-name">Meena Shah</div>
+              <div class="testi-role">Director, Shree Packaging Pvt. Ltd., Surat</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"We approached Salvin for our chemical plant expansion and their step-by-step compliance
+            roadmap was exceptional. They truly understand Gujarat's industrial landscape."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,var(--accent),var(--accent2))">AK</div>
+            <div>
+              <div class="testi-name">Amit Kumar</div>
+              <div class="testi-role">CEO, AK Chem Solutions, Vadodara</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="cases" id="cases">
+    <div class="section-inner">
+      <div style="text-align:center">
+        <span class="section-tag">Success Stories</span>
+        <h2 class="section-title">Case Studies</h2>
+        <p class="section-sub" style="margin:0 auto;max-width:520px">Real projects. Real results. See how we've
+          transformed industrial visions into thriving businesses.</p>
+      </div>
+      <div class="cases-grid">
+        <div class="case-card">
+          <img class="case-img" src="./assets/Studies_spice.jpg" alt="Spice Processing" />
+          <div class="case-body">
+            <span class="case-tag">Food Processing</span>
+            <h3>Greenfield Spice Processing Unit, Mehsana</h3>
+            <p>Complete setup — land, factory licensing, FSSAI, plant layout & DPR for bank loan approval.</p>
+            <div class="case-metrics">
+              <div>
+                <div class="cm-val">₹2.4<span>Cr</span></div>
+                <div class="cm-label">Project Cost</div>
+              </div>
+              <div>
+                <div class="cm-val">8<span>mo</span></div>
+                <div class="cm-label">Launch Time</div>
+              </div>
+              <div>
+                <div class="cm-val">100<span>%</span></div>
+                <div class="cm-label">Loan Approved</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="case-card">
+          <img class="case-img" src="./assets/Studies_chem.jpg" alt="Chemical Plant" />
+          <div class="case-body">
+            <span class="case-tag" style="background:#faf5ff;color:#7c3aed">Chemical Industry</span>
+            <h3>Chemical Plant Expansion, Vatva GIDC, Ahmedabad</h3>
+            <p>Capacity doubling with pollution board clearance and factory act amendment.</p>
+            <div class="case-metrics">
+              <div>
+                <div class="cm-val">2<span>x</span></div>
+                <div class="cm-label">Capacity</div>
+              </div>
+              <div>
+                <div class="cm-val">0</div>
+                <div class="cm-label">Compliance Fines</div>
+              </div>
+              <div>
+                <div class="cm-val">6<span>mo</span></div>
+                <div class="cm-label">Completion</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="case-card">
+          <img class="case-img" src="./assets/Studies_pack.jpg" alt="Packaging Startup" />
+          <div class="case-body">
+            <span class="case-tag" style="background:#f0f9ff;color:var(--accent)">Manufacturing</span>
+            <h3>Packaging Material Startup, Rajkot</h3>
+            <p>Greenfield project — DPR, MSME, GST, factory setup, and equipment procurement advisory.</p>
+            <div class="case-metrics">
+              <div>
+                <div class="cm-val">₹90<span>L</span></div>
+                <div class="cm-label">Project Cost</div>
+              </div>
+              <div>
+                <div class="cm-val">4<span>mo</span></div>
+                <div class="cm-label">Operational</div>
+              </div>
+              <div>
+                <div class="cm-val">35<span>%</span></div>
+                <div class="cm-label">ROI Year 1</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-grid">
+      <div>
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Start Your Industrial Journey Today</h2>
+        <p class="section-sub">Book a free initial consultation with our experts. No commitments — just clarity on your
+          next steps.</p>
+        <img class="contact-img"
+          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&auto=format&fit=crop"
+          alt="Team meeting" />
+        <div class="contact-info">
+          <div class="ci-item">
+            <div class="ci-icon"><i class="ti ti-map-pin"></i></div><span>Ahmedabad, Gujarat, India</span>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="ti ti-phone"></i></div><span>+91 98765 43210</span>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="ti ti-mail"></i></div><span>info@salvinconsultants.com</span>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="ti ti-clock"></i></div><span>Mon–Sat: 9:00 AM – 6:00 PM</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3 style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:6px">Request a Free Consultation</h3>
+        <p style="color:var(--gray2);font-size:13.5px;margin-bottom:24px">Our team will reach out within 24 hours.</p>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Rajesh" /></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Patel" /></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@company.com" /></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 98XXX XXXXX" /></div>
+        <div class="form-group"><label>Service Interested In</label>
+          <select>
+            <option value="">Select a service…</option>
+            <option>Industry Setup Consultancy</option>
+            <option>Food Business Consultancy</option>
+            <option>Factory Licensing</option>
+            <option>Project Reports / DPR</option>
+            <option>Compliance Assistance</option>
+            <option>Expansion Strategy</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Tell Us About Your Project</label><textarea
+            placeholder="Briefly describe your business idea or project…"></textarea></div>
+        <button class="form-submit" id="submitBtn">Send Consultation Request →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <img src="./assets/salvin_logo.jpg" alt="SAlvin Consultancy">
+        </a>
+        <p>India's trusted partner for industrial setup, food business consultancy, factory licensing, and project
+          documentation. Serving entrepreneurs and enterprises since 2009.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn"><i class="ti ti-brand-linkedin"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-whatsapp"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#process">How We Work</a></li>
+          <li><a href="#cases">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#contact">Industry Setup</a></li>
+          <li><a href="#contact">Food Consultancy</a></li>
+          <li><a href="#contact">Factory Licensing</a></li>
+          <li><a href="#contact">Project Reports</a></li>
+          <li><a href="#contact">Compliance</a></li>
+          <li><a href="#contact">Expansion Strategy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Ahmedabad, Gujarat</a></li>
+          <li><a href="tel:+9190239 79663">+91 90239 79663 | +91 97127 77034 | +91 97126 77034</a></li>
+          <li><a href="mailto:info.salvinindustries@gmail.com">info.salvinindustries@gmail.com</a></li>
+          <li><a href="#">Mon–Sat, 9AM–6PM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Salvin Consultants. All rights reserved.</p>
+      <p>Privacy Policy · Terms of Service · Sitemap</p>
+    </div>
+  </footer>
+
+  <script>
+    // HAMBURGER MENU
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburgerBtn.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      hamburgerBtn.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      nav.style.boxShadow = window.scrollY > 60 ? '0 2px 20px rgba(10,22,40,0.08)' : 'none';
+    });
+    document.getElementById('submitBtn').addEventListener('click', function () {
+      this.textContent = '✓ Request Sent! We\'ll call you within 24 hours.';
+      this.style.background = '#16a34a';
+      setTimeout(() => {
+        this.textContent = 'Send Consultation Request →';
+        this.style.background = 'var(--accent)';
+      }, 3500);
+    });
+
+    // HERO BACKGROUND IMAGE SLIDER
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-bg-slider .slider-slide');
+    const dots = document.querySelectorAll('.hero-bg-slider .slider-dot');
+    const totalSlides = slides.length;
+    let autoSlideInterval;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+      resetAutoSlide();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+      resetAutoSlide();
+    }
+
+    function autoSlide() {
+      nextSlide();
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(autoSlide, 5000);
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', nextSlide);
+    document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        currentSlide = parseInt(e.target.dataset.index);
+        showSlide(currentSlide);
+        resetAutoSlide();
+      });
+    });
+
+    // Start auto-slide on page load
+    autoSlideInterval = setInterval(autoSlide, 5000);
+  </script>
+</body>
+
+</html>
