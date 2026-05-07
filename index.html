@@ -294,7 +294,8 @@
       .btn-outline {
         padding: 11px 18px;
         font-size: 13px;
-        flex: 1;;
+        flex: 1;
+        ;
         min-width: 140px
       }
 
@@ -1448,7 +1449,7 @@
       width: 72%;
       height: 340px;
       object-fit: cover;
-      border:#428ed6 solid 4px;
+      border: #428ed6 solid 4px;
       border-radius: 18px;
       position: absolute;
       top: 0;
@@ -1562,7 +1563,7 @@
 
     .svc-card {
       background: #ffffff;
-      border: #cbcbcb 1px solid ;
+      border: #cbcbcb 1px solid;
       border-radius: 16px;
       padding: 28px;
       position: relative;
@@ -2215,225 +2216,765 @@
 
     /* TABLET: 769px - 1024px */
     @media (min-width: 769px) and (max-width: 1024px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr) }
-      .ind-grid { grid-template-columns: repeat(3, 1fr) }
-      .testi-grid { grid-template-columns: repeat(2, 1fr) }
-      .cases-grid { grid-template-columns: repeat(2, 1fr) }
-      .why-grid { grid-template-columns: 1fr; gap: 40px }
-      .process-steps { grid-template-columns: repeat(3, 1fr); gap: 20px }
-      .about-grid { gap: 40px }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px }
-      .footer-brand { grid-column: 1 / -1 }
-      .contact-grid { grid-template-columns: 1fr; gap: 40px }
-      .contact-img { height: 240px }
-      .hero h1 { font-size: clamp(28px, 4.5vw, 48px) }
-      section { padding: 70px 5% }
-      .svc-card-img { height: 130px }
-      .ind-img { height: 150px }
-      .why-img { height: 360px }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .ind-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .testi-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .cases-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px
+      }
+
+      .about-grid {
+        gap: 40px
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+
+      .contact-img {
+        height: 240px
+      }
+
+      .hero h1 {
+        font-size: clamp(28px, 4.5vw, 48px)
+      }
+
+      section {
+        padding: 70px 5%
+      }
+
+      .svc-card-img {
+        height: 130px
+      }
+
+      .ind-img {
+        height: 150px
+      }
+
+      .why-img {
+        height: 360px
+      }
     }
 
     /* MOBILE: ≤ 768px */
     @media (max-width: 768px) {
-      nav { padding: 0 4% }
-      .nav-inner { height: 60px }
-      .logo-icon { width: 32px; height: 32px; font-size: 13px }
-      .logo-text { font-size: 16px }
-      .nav-links { display: none }
-      .nav-cta { display: none }
-      .hamburger { display: flex }
+      nav {
+        padding: 0 4%
+      }
 
-      .hero { padding: 60px 20px 40px; min-height: 100vh; height: auto }
-      .hero-inner { flex-direction: column }
-      .hero h1 { font-size: clamp(24px, 5vw, 40px) }
-      .hero-badge { font-size: 11px }
-      .hero-sub { font-size: 14px }
-      .hero-btns { gap: 10px }
-      .btn-primary, .btn-outline { padding: 11px 18px; font-size: 13px; flex: 1; min-width: 140px }
-      .hero-stats { gap: 20px; padding-top: 24px; flex-wrap: wrap }
-      .stat-num { font-size: 22px }
-      .stat-label { font-size: 10px }
+      .nav-inner {
+        height: 60px
+      }
 
-      .slider-nav { width: 38px; height: 38px; font-size: 20px }
-      .slider-nav.prev { left: 15px }
-      .slider-nav.next { right: 15px }
-      .slider-dots { bottom: 20px }
+      .logo-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 13px
+      }
 
-      section { padding: 60px 4% }
-      .section-title { font-size: clamp(22px, 3vw, 32px) }
+      .logo-text {
+        font-size: 16px
+      }
 
-      .about-grid { grid-template-columns: 1fr; gap: 40px }
-      .about-imgs { height: 300px }
-      .about-img-main { width: 75%; height: 250px }
-      .about-img-small { width: 60%; height: 160px }
-      .mv-cards { grid-template-columns: 1fr }
+      .nav-links {
+        display: none
+      }
 
-      .services-grid { grid-template-columns: repeat(2, 1fr); gap: 16px }
-      .service-card { padding: 18px }
-      .service-icon { width: 44px; height: 44px; font-size: 20px }
-      .service-card h3 { font-size: 14px }
-      .service-card p { font-size: 12px }
-      .svc-card-img { height: 120px }
+      .nav-cta {
+        display: none
+      }
 
-      .ind-grid { grid-template-columns: repeat(2, 1fr); gap: 14px }
-      .industry-card { padding: 16px }
-      .industry-card h3 { font-size: 14px }
-      .industry-card p { font-size: 12px }
-      .ind-img { height: 140px }
+      .hamburger {
+        display: flex
+      }
 
-      .process-steps { grid-template-columns: repeat(2, 1fr); gap: 14px }
-      .process-steps::before { display: none }
-      .step { padding: 16px }
-      .step h4 { font-size: 12px }
-      .step-circle { width: 60px; height: 60px; font-size: 20px }
+      .hero {
+        padding: 60px 20px 40px;
+        min-height: 100vh;
+        height: auto
+      }
 
-      .testi-grid { grid-template-columns: 1fr; gap: 16px }
-      .testi-card { padding: 20px }
+      .hero-inner {
+        flex-direction: column
+      }
 
-      .cases-grid { grid-template-columns: 1fr; gap: 16px }
-      .case-img { height: 150px }
-      .case-metrics { flex-wrap: wrap; gap: 14px }
+      .hero h1 {
+        font-size: clamp(24px, 5vw, 40px)
+      }
 
-      .contact-grid { grid-template-columns: 1fr; gap: 40px }
-      .contact-form { padding: 20px }
-      .contact-img { height: 200px }
-      .form-input, .form-textarea, .form-submit { font-size: 14px }
-      .form-card { padding: 20px }
-      .form-row { grid-template-columns: 1fr }
+      .hero-badge {
+        font-size: 11px
+      }
 
-      .footer-grid { grid-template-columns: 1fr }
-      .footer-brand, .footer-col { text-align: center }
-      .footer-socials { justify-content: center }
-      .footer-bottom { justify-content: center; text-align: center }
+      .hero-sub {
+        font-size: 14px
+      }
 
-      .why-grid { grid-template-columns: 1fr; gap: 40px }
-      .why-cards { grid-template-columns: 1fr }
-      .why-img { height: 280px }
+      .hero-btns {
+        gap: 10px
+      }
 
-      .services-header { flex-direction: column; align-items: flex-start; gap: 16px }
-      .services-header .btn-primary { width: 100%; justify-content: center }
+      .btn-primary,
+      .btn-outline {
+        padding: 11px 18px;
+        font-size: 13px;
+        flex: 1;
+        min-width: 140px
+      }
 
-      .trusted-inner { flex-direction: column; gap: 16px; align-items: flex-start }
-      .ci-item { font-size: 13px }
+      .hero-stats {
+        gap: 20px;
+        padding-top: 24px;
+        flex-wrap: wrap
+      }
+
+      .stat-num {
+        font-size: 22px
+      }
+
+      .stat-label {
+        font-size: 10px
+      }
+
+      .slider-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 20px
+      }
+
+      .slider-nav.prev {
+        left: 15px
+      }
+
+      .slider-nav.next {
+        right: 15px
+      }
+
+      .slider-dots {
+        bottom: 20px
+      }
+
+      section {
+        padding: 60px 4%
+      }
+
+      .section-title {
+        font-size: clamp(22px, 3vw, 32px)
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+
+      .about-imgs {
+        height: 300px
+      }
+
+      .about-img-main {
+        width: 75%;
+        height: 250px
+      }
+
+      .about-img-small {
+        width: 60%;
+        height: 160px
+      }
+
+      .mv-cards {
+        grid-template-columns: 1fr
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px
+      }
+
+      .service-card {
+        padding: 18px
+      }
+
+      .service-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 20px
+      }
+
+      .service-card h3 {
+        font-size: 14px
+      }
+
+      .service-card p {
+        font-size: 12px
+      }
+
+      .svc-card-img {
+        height: 120px
+      }
+
+      .ind-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px
+      }
+
+      .industry-card {
+        padding: 16px
+      }
+
+      .industry-card h3 {
+        font-size: 14px
+      }
+
+      .industry-card p {
+        font-size: 12px
+      }
+
+      .ind-img {
+        height: 140px
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px
+      }
+
+      .process-steps::before {
+        display: none
+      }
+
+      .step {
+        padding: 16px
+      }
+
+      .step h4 {
+        font-size: 12px
+      }
+
+      .step-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 20px
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr;
+        gap: 16px
+      }
+
+      .testi-card {
+        padding: 20px
+      }
+
+      .cases-grid {
+        grid-template-columns: 1fr;
+        gap: 16px
+      }
+
+      .case-img {
+        height: 150px
+      }
+
+      .case-metrics {
+        flex-wrap: wrap;
+        gap: 14px
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+
+      .contact-form {
+        padding: 20px
+      }
+
+      .contact-img {
+        height: 200px
+      }
+
+      .form-input,
+      .form-textarea,
+      .form-submit {
+        font-size: 14px
+      }
+
+      .form-card {
+        padding: 20px
+      }
+
+      .form-row {
+        grid-template-columns: 1fr
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr
+      }
+
+      .footer-brand,
+      .footer-col {
+        text-align: center
+      }
+
+      .footer-socials {
+        justify-content: center
+      }
+
+      .footer-bottom {
+        justify-content: center;
+        text-align: center
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+
+      .why-cards {
+        grid-template-columns: 1fr
+      }
+
+      .why-img {
+        height: 280px
+      }
+
+      .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px
+      }
+
+      .services-header .btn-primary {
+        width: 100%;
+        justify-content: center
+      }
+
+      .trusted-inner {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start
+      }
+
+      .ci-item {
+        font-size: 13px
+      }
     }
 
     /* SMALL MOBILE: ≤ 480px */
     @media (max-width: 480px) {
-      nav { padding: 0 3% }
-      .nav-inner { height: 56px }
-      .logo-icon { width: 28px; height: 28px; font-size: 11px }
-      .logo-text { font-size: 14px }
-      .hamburger span { width: 20px; height: 2.5px }
+      nav {
+        padding: 0 3%
+      }
 
-      .hero { padding: 56px 15px 30px }
-      .hero h1 { font-size: clamp(20px, 5vw, 28px) }
-      .hero-badge { font-size: 10px; padding: 5px 12px }
-      .hero-sub { font-size: 13px; line-height: 1.6 }
-      .hero-btns { flex-direction: column; gap: 8px }
-      .btn-primary, .btn-outline { width: 100%; padding: 12px 16px; font-size: 13px }
-      .hero-stats { gap: 16px; flex-direction: column }
-      .stat-num { font-size: 20px }
+      .nav-inner {
+        height: 56px
+      }
 
-      .slider-nav { width: 34px; height: 34px; font-size: 18px }
-      .slider-nav.prev { left: 8px }
-      .slider-nav.next { right: 8px }
-      .slider-dot { width: 8px; height: 8px }
-      .slider-dot.active { width: 24px }
+      .logo-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 11px
+      }
 
-      section { padding: 50px 3% }
-      .section-title { font-size: 24px }
+      .logo-text {
+        font-size: 14px
+      }
 
-      .services-grid { grid-template-columns: 1fr }
-      .service-card { padding: 14px }
-      .svc-card { padding: 14px }
-      .svc-card-img { height: 100px }
+      .hamburger span {
+        width: 20px;
+        height: 2.5px
+      }
 
-      .ind-grid { grid-template-columns: 1fr }
-      .ind-img { height: 120px }
+      .hero {
+        padding: 56px 15px 30px
+      }
 
-      .process-steps { grid-template-columns: 1fr }
+      .hero h1 {
+        font-size: clamp(20px, 5vw, 28px)
+      }
 
-      .about-img-main { width: 80%; height: 200px }
-      .about-img-small { width: 65%; height: 140px }
-      .about-imgs { height: 260px }
-      .about-exp-badge { padding: 12px 14px }
-      .aeb-num { font-size: 24px }
+      .hero-badge {
+        font-size: 10px;
+        padding: 5px 12px
+      }
 
-      .mv-cards { grid-template-columns: 1fr }
-      .why-cards { grid-template-columns: 1fr }
+      .hero-sub {
+        font-size: 13px;
+        line-height: 1.6
+      }
 
-      .form-card { padding: 16px }
-      .form-card h3 { font-size: 17px }
+      .hero-btns {
+        flex-direction: column;
+        gap: 8px
+      }
 
-      .case-body { padding: 16px }
-      .case-img { height: 130px }
-      .testi-card { padding: 18px }
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 13px
+      }
 
-      .why-img { height: 240px }
-      .contact-img { height: 180px }
+      .hero-stats {
+        gap: 16px;
+        flex-direction: column
+      }
+
+      .stat-num {
+        font-size: 20px
+      }
+
+      .slider-nav {
+        width: 34px;
+        height: 34px;
+        font-size: 18px
+      }
+
+      .slider-nav.prev {
+        left: 8px
+      }
+
+      .slider-nav.next {
+        right: 8px
+      }
+
+      .slider-dot {
+        width: 8px;
+        height: 8px
+      }
+
+      .slider-dot.active {
+        width: 24px
+      }
+
+      section {
+        padding: 50px 3%
+      }
+
+      .section-title {
+        font-size: 24px
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr
+      }
+
+      .service-card {
+        padding: 14px
+      }
+
+      .svc-card {
+        padding: 14px
+      }
+
+      .svc-card-img {
+        height: 100px
+      }
+
+      .ind-grid {
+        grid-template-columns: 1fr
+      }
+
+      .ind-img {
+        height: 120px
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr
+      }
+
+      .about-img-main {
+        width: 80%;
+        height: 200px
+      }
+
+      .about-img-small {
+        width: 65%;
+        height: 140px
+      }
+
+      .about-imgs {
+        height: 260px
+      }
+
+      .about-exp-badge {
+        padding: 12px 14px
+      }
+
+      .aeb-num {
+        font-size: 24px
+      }
+
+      .mv-cards {
+        grid-template-columns: 1fr
+      }
+
+      .why-cards {
+        grid-template-columns: 1fr
+      }
+
+      .form-card {
+        padding: 16px
+      }
+
+      .form-card h3 {
+        font-size: 17px
+      }
+
+      .case-body {
+        padding: 16px
+      }
+
+      .case-img {
+        height: 130px
+      }
+
+      .testi-card {
+        padding: 18px
+      }
+
+      .why-img {
+        height: 240px
+      }
+
+      .contact-img {
+        height: 180px
+      }
     }
 
     /* ULTRA-SMALL: ≤ 360px */
     @media (max-width: 360px) {
-      nav { padding: 0 2% }
-      .nav-inner { height: 52px }
+      nav {
+        padding: 0 2%
+      }
 
-      .hero { padding: 52px 10px 24px }
-      .hero h1 { font-size: 20px; letter-spacing: -0.5px }
-      .hero-badge { font-size: 9px; padding: 4px 10px }
-      .hero-sub { font-size: 12px }
-      .btn-primary, .btn-outline { padding: 10px 14px; font-size: 12px }
-      .stat-num { font-size: 18px }
-      .stat-label { font-size: 9px }
+      .nav-inner {
+        height: 52px
+      }
 
-      section { padding: 40px 3% }
-      .section-title { font-size: 20px }
-      .section-sub { font-size: 13px }
-      .section-tag { font-size: 10px; padding: 4px 10px }
+      .hero {
+        padding: 52px 10px 24px
+      }
 
-      .about-imgs { height: 220px }
-      .about-img-main { height: 170px; width: 85% }
-      .about-img-small { height: 120px; width: 70% }
-      .about-exp-badge { padding: 10px 12px }
-      .aeb-num { font-size: 20px }
+      .hero h1 {
+        font-size: 20px;
+        letter-spacing: -0.5px
+      }
 
-      .mv-card { padding: 14px }
-      .svc-card { padding: 12px }
-      .svc-card-img { height: 90px; margin-bottom: 12px }
-      .svc-card h3 { font-size: 13px }
-      .svc-card p { font-size: 11px }
+      .hero-badge {
+        font-size: 9px;
+        padding: 4px 10px
+      }
 
-      .step-circle { width: 50px; height: 50px; font-size: 18px }
-      .step h4 { font-size: 11px }
-      .step p { font-size: 10px }
+      .hero-sub {
+        font-size: 12px
+      }
 
-      .testi-card { padding: 14px }
-      .testi-text { font-size: 12px }
-      .case-body { padding: 12px }
-      .cm-val { font-size: 16px }
+      .btn-primary,
+      .btn-outline {
+        padding: 10px 14px;
+        font-size: 12px
+      }
 
-      .form-card { padding: 14px }
-      .form-group input, .form-group select, .form-group textarea { padding: 10px 12px; font-size: 13px }
-      .form-submit { padding: 12px; font-size: 13px }
+      .stat-num {
+        font-size: 18px
+      }
 
-      .footer-grid { gap: 24px }
-      .footer-col h4 { font-size: 13px }
-      .footer-col a { font-size: 12px }
+      .stat-label {
+        font-size: 9px
+      }
 
-      .slider-nav { width: 30px; height: 30px; font-size: 16px }
-      .slider-nav.prev { left: 5px }
-      .slider-nav.next { right: 5px }
-      .slider-dots { bottom: 14px }
-      .slider-dot { width: 6px; height: 6px }
-      .slider-dot.active { width: 20px }
+      section {
+        padding: 40px 3%
+      }
+
+      .section-title {
+        font-size: 20px
+      }
+
+      .section-sub {
+        font-size: 13px
+      }
+
+      .section-tag {
+        font-size: 10px;
+        padding: 4px 10px
+      }
+
+      .about-imgs {
+        height: 220px
+      }
+
+      .about-img-main {
+        height: 170px;
+        width: 85%
+      }
+
+      .about-img-small {
+        height: 120px;
+        width: 70%
+      }
+
+      .about-exp-badge {
+        padding: 10px 12px
+      }
+
+      .aeb-num {
+        font-size: 20px
+      }
+
+      .mv-card {
+        padding: 14px
+      }
+
+      .svc-card {
+        padding: 12px
+      }
+
+      .svc-card-img {
+        height: 90px;
+        margin-bottom: 12px
+      }
+
+      .svc-card h3 {
+        font-size: 13px
+      }
+
+      .svc-card p {
+        font-size: 11px
+      }
+
+      .step-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 18px
+      }
+
+      .step h4 {
+        font-size: 11px
+      }
+
+      .step p {
+        font-size: 10px
+      }
+
+      .testi-card {
+        padding: 14px
+      }
+
+      .testi-text {
+        font-size: 12px
+      }
+
+      .case-body {
+        padding: 12px
+      }
+
+      .cm-val {
+        font-size: 16px
+      }
+
+      .form-card {
+        padding: 14px
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        padding: 10px 12px;
+        font-size: 13px
+      }
+
+      .form-submit {
+        padding: 12px;
+        font-size: 13px
+      }
+
+      .footer-grid {
+        gap: 24px
+      }
+
+      .footer-col h4 {
+        font-size: 13px
+      }
+
+      .footer-col a {
+        font-size: 12px
+      }
+
+      .slider-nav {
+        width: 30px;
+        height: 30px;
+        font-size: 16px
+      }
+
+      .slider-nav.prev {
+        left: 5px
+      }
+
+      .slider-nav.next {
+        right: 5px
+      }
+
+      .slider-dots {
+        bottom: 14px
+      }
+
+      .slider-dot {
+        width: 6px;
+        height: 6px
+      }
+
+      .slider-dot.active {
+        width: 20px
+      }
     }
 
     /* LARGE SCREENS: ≥ 1440px */
     @media (min-width: 1440px) {
-      .section-inner { max-width: 1320px }
-      .nav-inner { max-width: 1320px }
-      .contact-grid { max-width: 1320px }
-      .footer-grid { max-width: 1320px }
+      .section-inner {
+        max-width: 1320px
+      }
+
+      .nav-inner {
+        max-width: 1320px
+      }
+
+      .contact-grid {
+        max-width: 1320px
+      }
+
+      .footer-grid {
+        max-width: 1320px
+      }
     }
   </style>
 </head>
@@ -2450,6 +2991,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#industries">Industries</a></li>
+        <li><a href="projects.html">View Projects</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -2467,6 +3009,7 @@
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#industries">Industries</a>
+    <a href="projects.html">View Projects</a>
     <a href="#process">Process</a>
     <a href="#contact">Contact</a>
     <a href="#contact" class="nav-cta-mobile">Get Free Consultation</a>
@@ -2559,8 +3102,7 @@
       <div class="about-grid">
         <div class="about-imgs">
           <img class="about-img-main" src="./assets/WhoWE1.jpg" alt="Factory consultation" />
-          <img class="about-img-small" src="./assets/WhoWE2.jpg"
-            alt="Industrial planning" />
+          <img class="about-img-small" src="./assets/WhoWE2.jpg" alt="Industrial planning" />
           <div class="about-exp-badge">
             <div class="aeb-num">15+</div>
             <div class="aeb-label">Years of<br />Excellence</div>
@@ -2675,9 +3217,7 @@
       </div>
       <div class="ind-grid">
         <div class="ind-card">
-          <img class="ind-img"
-            src="./assets/Spec_manufacturer.jpg"
-            alt="Manufacturing" />
+          <img class="ind-img" src="./assets/Spec_manufacturer.jpg" alt="Manufacturing" />
           <div class="ind-body"><i class="ti ti-building-factory-2"></i><span>Manufacturing</span></div>
         </div>
         <div class="ind-card">
@@ -3067,7 +3607,7 @@
     function showSlide(index) {
       slides.forEach(slide => slide.classList.remove('active'));
       dots.forEach(dot => dot.classList.remove('active'));
-      
+
       slides[index].classList.add('active');
       dots[index].classList.add('active');
     }
