@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Contact Us - Salvin Consultants</title>
+  <meta name="description" content="Get in touch with Salvin Consultants for industrial setup, factory licensing, food business consultancy and more. Free consultation available."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0a1628', navy2: '#0f2044', blue: '#1a3a8f', blue2: '#2255cc',
+            accent: '#0ea5e9', accent2: '#38bdf8', cyan: '#06b6d4', light: '#f8fafc', gray2: '#64748b',
+          },
+          fontFamily: { sans: ['Segoe UI', 'system-ui', 'sans-serif'] },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <link rel="stylesheet" href="shared.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="./assets/salvin_logo.jpg" alt="Salvin Consultancy" class="h-10 md:h-12 w-auto">
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#industries">Industries</a></li>
+        <li><a href="projects.html">View Projects</a></li>
+        <li><a href="index.html#process">Process</a></li>
+        <li><a href="contact.html" class="active-link">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Get Free Consultation</a>
+      <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu max-h-[calc(100vh-68px)] overflow-y-auto" id="mobileMenu">
+    <a href="about.html">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#industries">Industries</a>
+    <a href="projects.html">View Projects</a>
+    <a href="index.html#process">Process</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta-mobile">Get Free Consultation</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="section-tag" style="background:rgba(14,165,233,0.2);color:var(--accent2)">Get In Touch</span>
+      <h1>Contact Us</h1>
+      <p>Have a question or ready to start your industrial journey? We're here to help you every step of the way.</p>
+      <div class="page-hero-breadcrumb"><a href="index.html">Home</a><i class="ti ti-chevron-right"></i><span>Contact Us</span></div>
+    </div>
+  </section>
+
+  <!-- CONTACT INFO CARDS -->
+  <section style="background:var(--light);padding:90px 5%">
+    <div class="section-inner">
+      <div style="text-align:center;margin-bottom:50px">
+        <span class="section-tag">Reach Out</span>
+        <h2 class="section-title">How to Reach Us</h2>
+        <p class="section-sub" style="max-width:540px;margin:0 auto">Multiple ways to connect with our team of industrial consultancy experts.</p>
+      </div>
+      <div class="contact-cards-grid">
+        <div class="contact-info-card">
+          <div class="cic-icon" style="background:#eff6ff;color:var(--blue2)"><i class="ti ti-map-pin"></i></div>
+          <h3>Visit Our Office</h3>
+          <p>Ahmedabad, Gujarat, India</p>
+          <span class="cic-detail">Mon–Sat: 9:00 AM – 6:00 PM</span>
+        </div>
+        <div class="contact-info-card">
+          <div class="cic-icon" style="background:#f0f9ff;color:var(--accent)"><i class="ti ti-phone"></i></div>
+          <h3>Call Us</h3>
+          <p>+91 90239 79663</p>
+          <p>+91 97127 77034</p>
+          <span class="cic-detail">Available during business hours</span>
+        </div>
+        <div class="contact-info-card">
+          <div class="cic-icon" style="background:#f0fdf4;color:#16a34a"><i class="ti ti-mail"></i></div>
+          <h3>Email Us</h3>
+          <p>info.salvinindustries@gmail.com</p>
+          <span class="cic-detail">We respond within 24 hours</span>
+        </div>
+        <div class="contact-info-card">
+          <div class="cic-icon" style="background:#faf5ff;color:#7c3aed"><i class="ti ti-brand-whatsapp"></i></div>
+          <h3>WhatsApp</h3>
+          <p>+91 97126 77034</p>
+          <span class="cic-detail">Quick replies on WhatsApp</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM SECTION -->
+  <section class="contact" id="contact-form" style="background:#fff;padding:90px 5%">
+    <div class="contact-grid">
+      <div>
+        <span class="section-tag">Free Consultation</span>
+        <h2 class="section-title">Start Your Industrial Journey Today</h2>
+        <p class="section-sub">Book a free initial consultation with our experts. No commitments — just clarity on your next steps.</p>
+        <img class="contact-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&auto=format&fit=crop" alt="Team meeting"/>
+        <div class="contact-info">
+          <div class="ci-item"><div class="ci-icon"><i class="ti ti-map-pin"></i></div><span>Ahmedabad, Gujarat, India</span></div>
+          <div class="ci-item"><div class="ci-icon"><i class="ti ti-phone"></i></div><span>+91 90239 79663</span></div>
+          <div class="ci-item"><div class="ci-icon"><i class="ti ti-mail"></i></div><span>info.salvinindustries@gmail.com</span></div>
+          <div class="ci-item"><div class="ci-icon"><i class="ti ti-clock"></i></div><span>Mon–Sat: 9:00 AM – 6:00 PM</span></div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3 style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:6px">Request a Free Consultation</h3>
+        <p style="color:var(--gray2);font-size:13.5px;margin-bottom:24px">Our team will reach out within 24 hours.</p>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Rajesh"/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Patel"/></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@company.com"/></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 98XXX XXXXX"/></div>
+        <div class="form-group"><label>Service Interested In</label>
+          <select>
+            <option value="">Select a service…</option>
+            <option>Industry Setup Consultancy</option>
+            <option>Food Business Consultancy</option>
+            <option>Factory Licensing</option>
+            <option>Project Reports / DPR</option>
+            <option>Compliance Assistance</option>
+            <option>Expansion Strategy</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Tell Us About Your Project</label><textarea placeholder="Briefly describe your business idea or project…"></textarea></div>
+        <button class="form-submit" id="submitBtn">Send Consultation Request →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section style="background:var(--light);padding:60px 5%">
+    <div class="section-inner">
+      <div style="text-align:center;margin-bottom:30px">
+        <span class="section-tag blue">Our Location</span>
+        <h2 class="section-title">Find Us Here</h2>
+      </div>
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(10,22,40,0.1);border:1px solid var(--gray)">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235014.29918007036!2d72.41493074687499!3d23.020158899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1699000000000!5m2!1sen!2sin" width="100%" height="400" style="border:0" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="./assets/salvin_logo.jpg" alt="Salvin Consultancy" class="h-10 md:h-12 w-auto"></a>
+        <p>India's trusted partner for industrial setup, food business consultancy, factory licensing, and project documentation. Serving entrepreneurs and enterprises since 2009.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn"><i class="ti ti-brand-linkedin"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-whatsapp"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html#services">Our Services</a></li>
+          <li><a href="index.html#industries">Industries</a></li>
+          <li><a href="index.html#process">How We Work</a></li>
+          <li><a href="index.html#cases">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="contact.html">Industry Setup</a></li>
+          <li><a href="contact.html">Food Consultancy</a></li>
+          <li><a href="contact.html">Factory Licensing</a></li>
+          <li><a href="contact.html">Project Reports</a></li>
+          <li><a href="contact.html">Compliance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Ahmedabad, Gujarat</a></li>
+          <li><a href="tel:+919023979663">+91 90239 79663 | +91 97127 77034</a></li>
+          <li><a href="mailto:info.salvinindustries@gmail.com">info.salvinindustries@gmail.com</a></li>
+          <li><a href="#">Mon–Sat, 9AM–6PM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Salvin Consultants. All rights reserved.</p>
+      <p>Privacy Policy · Terms of Service · Sitemap</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburgerBtn=document.getElementById('hamburgerBtn'),mobileMenu=document.getElementById('mobileMenu');
+    hamburgerBtn.addEventListener('click',()=>{hamburgerBtn.classList.toggle('active');mobileMenu.classList.toggle('active')});
+    mobileMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{hamburgerBtn.classList.remove('active');mobileMenu.classList.remove('active')}));
+    window.addEventListener('scroll',()=>{hamburgerBtn.classList.remove('active');mobileMenu.classList.remove('active');document.querySelector('nav').style.boxShadow=window.scrollY>60?'0 2px 20px rgba(10,22,40,0.08)':'none'});
+    document.getElementById('submitBtn').addEventListener('click',function(){this.textContent='✓ Request Sent! We\'ll call you within 24 hours.';this.style.background='#16a34a';setTimeout(()=>{this.textContent='Send Consultation Request →';this.style.background='var(--accent)'},3500)});
+  </script>
+</body>
+</html>

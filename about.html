@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>About Us - Salvin Consultants</title>
+  <meta name="description" content="Learn about Salvin Consultants - India's trusted industrial consultancy with 15+ years of expertise in factory setup, licensing, and compliance."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0a1628', navy2: '#0f2044', blue: '#1a3a8f', blue2: '#2255cc',
+            accent: '#0ea5e9', accent2: '#38bdf8', cyan: '#06b6d4', light: '#f8fafc', gray2: '#64748b',
+          },
+          fontFamily: { sans: ['Segoe UI', 'system-ui', 'sans-serif'] },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <link rel="stylesheet" href="shared.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="./assets/salvin_logo.jpg" alt="Salvin Consultancy" class="h-10 md:h-12 w-auto">
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html" class="active-link">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#industries">Industries</a></li>
+        <li><a href="projects.html">View Projects</a></li>
+        <li><a href="index.html#process">Process</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Get Free Consultation</a>
+      <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu max-h-[calc(100vh-68px)] overflow-y-auto" id="mobileMenu">
+    <a href="about.html">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#industries">Industries</a>
+    <a href="projects.html">View Projects</a>
+    <a href="index.html#process">Process</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta-mobile">Get Free Consultation</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="section-tag" style="background:rgba(14,165,233,0.2);color:var(--accent2)">Who We Are</span>
+      <h1>About Salvin Consultants</h1>
+      <p>India's premier industrial consultancy — transforming entrepreneurial visions into thriving manufacturing operations since 2009.</p>
+      <div class="page-hero-breadcrumb"><a href="index.html">Home</a><i class="ti ti-chevron-right"></i><span>About Us</span></div>
+    </div>
+  </section>
+
+  <!-- ABOUT INTRO -->
+  <section class="about" style="background:#fff">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-imgs">
+          <img class="about-img-main" src="./assets/WhoWE1.jpg" alt="Factory consultation"/>
+          <img class="about-img-small" src="./assets/WhoWE2.jpg" alt="Industrial planning"/>
+          <div class="about-exp-badge">
+            <div class="aeb-num">15+</div>
+            <div class="aeb-label">Years of<br/>Excellence</div>
+          </div>
+        </div>
+        <div>
+          <span class="section-tag">Our Story</span>
+          <h2 class="section-title">Built on Trust.<br/>Driven by Expertise.</h2>
+          <p class="section-sub">Salvin Consultants is a premier industrial and business consultancy firm, specializing in helping entrepreneurs and companies start, license, and scale manufacturing and food processing ventures across India.</p>
+          <p class="section-sub" style="margin-top:14px">Founded in 2009 in Ahmedabad, Gujarat, we started with a simple mission — to make industrial setup accessible, transparent, and hassle-free for every aspiring entrepreneur. Over 15 years, we have grown into a trusted name serving 500+ clients across manufacturing, food processing, pharma, chemical, packaging, and engineering sectors.</p>
+          <p class="section-sub" style="margin-top:14px">With a team of seasoned industry professionals, we bring practical, on-ground expertise to every engagement — ensuring your project is delivered on time, in budget, and fully compliant.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION & VISION -->
+  <section style="background:var(--light);padding:90px 5%">
+    <div class="section-inner">
+      <div style="text-align:center;margin-bottom:50px">
+        <span class="section-tag">Our Purpose</span>
+        <h2 class="section-title">Mission & Vision</h2>
+        <p class="section-sub" style="max-width:560px;margin:0 auto">The guiding principles that drive every project, partnership, and decision at Salvin Consultants.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px" class="mv-grid-page">
+        <div class="mv-card-page">
+          <div class="mv-icon-page" style="background:#eff6ff;color:var(--blue2)"><i class="ti ti-target" style="font-size:28px"></i></div>
+          <h3>Our Mission</h3>
+          <p>To simplify industrial setup and help businesses achieve operational excellence with zero compromise on compliance. We aim to democratize access to expert industrial consultancy, making it affordable and accessible for businesses of all sizes — from first-time entrepreneurs to established enterprises looking to expand.</p>
+        </div>
+        <div class="mv-card-page">
+          <div class="mv-icon-page" style="background:#f0f9ff;color:var(--accent)"><i class="ti ti-eye" style="font-size:28px"></i></div>
+          <h3>Our Vision</h3>
+          <p>To be India's most trusted industrial consultancy — empowering every entrepreneur with knowledge and support. We envision a future where starting a manufacturing business in India is seamless, and every entrepreneur has a knowledgeable partner guiding them through every regulatory and operational milestone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE VALUES -->
+  <section style="background:#fff;padding:90px 5%">
+    <div class="section-inner">
+      <div style="text-align:center;margin-bottom:50px">
+        <span class="section-tag blue">What Guides Us</span>
+        <h2 class="section-title">Our Core Values</h2>
+        <p class="section-sub" style="max-width:540px;margin:0 auto">The principles that shape our culture, service delivery, and client relationships.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon" style="background:#eff6ff;color:var(--blue2)"><i class="ti ti-shield-check"></i></div>
+          <h3>Integrity</h3>
+          <p>We maintain the highest standards of honesty and transparency in every interaction, ensuring trust is never compromised.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" style="background:#f0f9ff;color:var(--accent)"><i class="ti ti-bulb"></i></div>
+          <h3>Innovation</h3>
+          <p>We continuously evolve our methodologies and leverage modern tools to deliver efficient and future-ready solutions.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" style="background:#f0fdf4;color:#16a34a"><i class="ti ti-users"></i></div>
+          <h3>Client Focus</h3>
+          <p>Every decision we make is rooted in delivering exceptional value and measurable outcomes for our clients.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" style="background:#faf5ff;color:#7c3aed"><i class="ti ti-star"></i></div>
+          <h3>Excellence</h3>
+          <p>We hold ourselves to the highest standards, delivering quality work that exceeds expectations on every project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BANNER -->
+  <section class="stats-banner">
+    <div class="section-inner">
+      <div class="stats-grid">
+        <div class="stat-item"><div class="stat-number">500<span>+</span></div><div class="stat-text">Projects Delivered</div></div>
+        <div class="stat-item"><div class="stat-number">15<span>+</span></div><div class="stat-text">Years Experience</div></div>
+        <div class="stat-item"><div class="stat-number">98<span>%</span></div><div class="stat-text">Client Satisfaction</div></div>
+        <div class="stat-item"><div class="stat-number">12<span>+</span></div><div class="stat-text">Industries Served</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section style="background:var(--light);padding:90px 5%">
+    <div class="section-inner">
+      <div class="why-grid">
+        <div>
+          <img class="why-img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format&fit=crop" alt="Team consulting"/>
+        </div>
+        <div>
+          <span class="section-tag">Why Salvin</span>
+          <h2 class="section-title">Why Companies Choose Us</h2>
+          <p class="section-sub" style="margin-bottom:28px">Four pillars that make Salvin Consultants the preferred partner for entrepreneurs and enterprises across India.</p>
+          <div class="why-cards">
+            <div class="why-card">
+              <div class="why-icon" style="background:#eff6ff;color:var(--blue2)"><i class="ti ti-brain"></i></div>
+              <h3>Deep Expertise</h3>
+              <p>15+ years across manufacturing, food, pharma, and chemical sectors.</p>
+            </div>
+            <div class="why-card">
+              <div class="why-icon" style="background:#f0f9ff;color:var(--accent)"><i class="ti ti-route"></i></div>
+              <h3>End-to-End Support</h3>
+              <p>With you from concept to commissioning and beyond.</p>
+            </div>
+            <div class="why-card">
+              <div class="why-icon" style="background:#f0fdf4;color:#16a34a"><i class="ti ti-history"></i></div>
+              <h3>Proven Track Record</h3>
+              <p>500+ projects, 98% satisfaction, and a trusted network.</p>
+            </div>
+            <div class="why-card">
+              <div class="why-icon" style="background:#faf5ff;color:#7c3aed"><i class="ti ti-adjustments"></i></div>
+              <h3>Customized Solutions</h3>
+              <p>Bespoke strategies tailored to your scale, sector, and goals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="section-inner" style="text-align:center">
+      <h2 style="font-size:clamp(24px,3vw,38px);font-weight:900;color:#fff;margin-bottom:16px">Ready to Start Your Industrial Journey?</h2>
+      <p style="color:rgba(255,255,255,0.8);font-size:16px;max-width:500px;margin:0 auto 30px;line-height:1.7">Book a free consultation with our experts and take the first step toward building your industrial vision.</p>
+      <a href="contact.html" class="btn-primary" style="font-size:16px;padding:16px 32px">Get Free Consultation <i class="ti ti-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="./assets/salvin_logo.jpg" alt="Salvin Consultancy" class="h-10 md:h-12 w-auto"></a>
+        <p>India's trusted partner for industrial setup, food business consultancy, factory licensing, and project documentation. Serving entrepreneurs and enterprises since 2009.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn"><i class="ti ti-brand-linkedin"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-whatsapp"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html#services">Our Services</a></li>
+          <li><a href="index.html#industries">Industries</a></li>
+          <li><a href="index.html#process">How We Work</a></li>
+          <li><a href="index.html#cases">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="contact.html">Industry Setup</a></li>
+          <li><a href="contact.html">Food Consultancy</a></li>
+          <li><a href="contact.html">Factory Licensing</a></li>
+          <li><a href="contact.html">Project Reports</a></li>
+          <li><a href="contact.html">Compliance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Ahmedabad, Gujarat</a></li>
+          <li><a href="tel:+919023979663">+91 90239 79663 | +91 97127 77034</a></li>
+          <li><a href="mailto:info.salvinindustries@gmail.com">info.salvinindustries@gmail.com</a></li>
+          <li><a href="#">Mon–Sat, 9AM–6PM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Salvin Consultants. All rights reserved.</p>
+      <p>Privacy Policy · Terms of Service · Sitemap</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburgerBtn=document.getElementById('hamburgerBtn'),mobileMenu=document.getElementById('mobileMenu');
+    hamburgerBtn.addEventListener('click',()=>{hamburgerBtn.classList.toggle('active');mobileMenu.classList.toggle('active')});
+    mobileMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{hamburgerBtn.classList.remove('active');mobileMenu.classList.remove('active')}));
+    window.addEventListener('scroll',()=>{hamburgerBtn.classList.remove('active');mobileMenu.classList.remove('active');document.querySelector('nav').style.boxShadow=window.scrollY>60?'0 2px 20px rgba(10,22,40,0.08)':'none'});
+  </script>
+</body>
+</html>
